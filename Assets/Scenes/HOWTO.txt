@@ -1,8 +1,0 @@
-Create a new scene in /Scenes folder
-Create 3d geometry (planes, cubes, spheres etc)
-Place spawnpoints for Bowling ball and pins from /Prefabs folder
-Remove camera from scene
-Add scene to File->Build Settings
-Load main scene from /Scenes (Save changes to your scene)
-Edit GameController.loadScene to the name of your awesome scene. You can find it in the inspector when you've selected the game object in the Hierarchy.
-Press Play and hunt bugs

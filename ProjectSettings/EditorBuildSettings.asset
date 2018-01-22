@@ -6,14 +6,5 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/main.unity
-    guid: 226ca92546074774c8ea74218552de04
-  - enabled: 1
-    path: Assets/Scenes/lvl1.unity
-    guid: 6a2084920d6780142b8cf311d96f7f4b
-  - enabled: 1
-    path: Assets/Scenes/UphillBattle.unity
-    guid: c103e1b43de2f8d449be2c28e4c7aea0
-  - enabled: 1
-    path: Assets/Scenes/ThinChallenge.unity
-    guid: 5779572e3d6577b4b9fa87bc084c7391
+    path: Assets/_Scenes/One.unity
+    guid: 8ace53f7191566342ab47826975ac98c
