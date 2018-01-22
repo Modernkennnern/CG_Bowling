@@ -21,7 +21,8 @@ public class CameraController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        var position = gameController.ball.transform.position;
+        var ball = gameController.ball;
+        var position = ball.transform.position;
 
         this.transform.position = position;
         this.transform.GetChild(0).LookAt(gameController.ball.transform.position);
