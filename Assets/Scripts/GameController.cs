@@ -12,7 +12,7 @@ public class GameController : MonoBehaviour {
     private float pressedTime;
 
     private void Start() {
-        // SceneManager.LoadScene(0, LoadSceneMode.Additive);
+        SceneManager.LoadScene(0, LoadSceneMode.Additive);
     }
 
     // Update is called once per frame
@@ -27,36 +27,30 @@ public class GameController : MonoBehaviour {
         }
 
         // når vi presser mus så starter vi en timer
-        if ( (ball != null) && (ball.GetComponent<BallController>() != null) && (!Input.GetMouseButton(1))) {
-            ball.aimer.gameObject.SetActive(true);
+        if (!ball.IsMoving) { 
             if (Input.GetMouseButtonDown(0)) {
                 pressedTime = Time.time;
             }
-            if (ball.aimer.gameObject.activeSelf) {
-                if (Input.GetMouseButton(0) && pressedTime > 0) {
-                    var color = Color.Lerp(Color.yellow, Color.red, (Time.time - pressedTime) / chargeSeconds);
-                    ball.aimer.SetAimColor(color);
-                }
-                if (Input.GetMouseButtonUp(0)) {
-                    ball.aimer.SetAimColor(Color.yellow);
-                    float power = (Time.time - pressedTime) / chargeSeconds;
-                    if (power > 1) {
-                        Debug.Log("Dun Goofed!!");
-                    }
-                    else {
-                        ball.Throw(power);
-                    }
-                    pressedTime = -1; // acts as a flag for color morph
-                }
-                if (Input.GetKeyDown(KeyCode.Space)) {
-                    ball.Jump();
-                }
+            if (Input.GetMouseButton(0) && pressedTime > 0) {
+                var color = Color.Lerp(Color.yellow, Color.red, (Time.time - pressedTime) / chargeSeconds);
+                ball.aimer.SetAimColor(color);
             }
-                            // tiden mellom X sekunder bestemmer fargen mellom gul og rød
+            if (Input.GetMouseButtonUp(0)) {
+                ball.aimer.SetAimColor(Color.yellow);
+                float power = (Time.time - pressedTime) / chargeSeconds;
+                if (power > 1) {
+                    Debug.Log("Adrian!!");
+                }
+                else {
+                    ball.Throw(power);
+                }
+                pressedTime = -1; // acts as a flag for color morph
+            }
         }
-        else {
-            ball.aimer.SetAimColor(Color.white);
-            ball.aimer.gameObject.SetActive(false);
+        if (Input.GetKeyDown(KeyCode.Space)) {
+                ball.Jump();
         }
-    }
+        if (Input.GetKeyDown(KeyCode.T)) ball.Throw(1); //DEBUG CODE
+            // tiden mellom X sekunder bestemmer fargen mellom gul og rød
+        }
 }

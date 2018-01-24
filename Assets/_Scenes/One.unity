@@ -126,7 +126,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4548010836967782, guid: 1b2a80e293ad64445b59f7a3b29ad968, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 3.66
+      value: 23.63
       objectReference: {fileID: 0}
     - target: {fileID: 4548010836967782, guid: 1b2a80e293ad64445b59f7a3b29ad968, type: 2}
       propertyPath: m_LocalPosition.z
@@ -668,7 +668,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pins: {fileID: 1223840915091170, guid: c2bf0cbbb93e60d4482f2d2d2b4bf14a, type: 2}
   ball: {fileID: 0}
-  chargeSeconds: 2.5
+  chargeSeconds: 1
 --- !u!4 &1564711179
 Transform:
   m_ObjectHideFlags: 0

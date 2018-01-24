@@ -218,6 +218,7 @@ MonoBehaviour:
   aimDistance: 2
   maxPower: 50
   jumpForce: 10
+  currentVelocity: {x: 0, y: 0, z: 0}
 --- !u!114 &114854522308500894
 MonoBehaviour:
   m_ObjectHideFlags: 1

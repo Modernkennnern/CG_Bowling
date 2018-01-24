@@ -8,16 +8,24 @@ public class BallController : MonoBehaviour {
     public float aimDistance;
     public float maxPower;
     public float jumpForce;
+    public Vector3 currentVelocity;
 
     public bool IsMoving { get; private set; }
+    public float JumpCooldown { get; private set; }
+    private float CurrentJumpCooldownTimerInSeonds;
 
     // Use this for initialization
     void Start() {
         cam = FindObjectOfType<Camera>();
+        JumpCooldown = 2;
     }
 
     // Update is called once per frame
     void Update() {
+
+        JumpCooldown = Time.time + CurrentJumpCooldownTimerInSeonds;
+
+        currentVelocity = GetComponent<Rigidbody>().velocity;
 
         RaycastHit hit;
         Ray ray = cam.ScreenPointToRay(Input.mousePosition);
@@ -49,7 +57,7 @@ public class BallController : MonoBehaviour {
     }
 
     public void Jump() {
-        if (IsMoving) {
+        if (IsMoving && JumpCooldown <= Time.time) {
             GetComponent<Rigidbody>().AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         }
     }
